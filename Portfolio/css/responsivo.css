@@ -1,0 +1,25 @@
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+    .telaDestaque {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .telaDestaque h1 {
+        font-size: 2rem;
+    }
+    
+    .slider {
+        flex-direction: column;
+    }
+    
+    .lista-conhecimentos {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .conhecimento {
+        min-width: 250px;
+        height: 350px;
+    }
+}
