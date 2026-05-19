@@ -1,125 +1,146 @@
+/* Reset de tudo do site e variável rem customizada copiada */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --rem: 1px; /* Copiei de um gringo, o rem é relativo ao site então fica mais responsivo */
 }
 
+/* Estilos básicos do body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 40rem;
+    font-style: normal;
     line-height: 1.6;
+    letter-spacing: 0.1rem;
     color: #333;
     background-color: #212020;
+    --rem: 1px;
 }
 
+/* Main da página */
 .main {
     display: flex;
     min-height: 100vh;
 }
 
+/* Container de conteúdo vertical  (tive ideia vendo um site da Paschoalotto)*/
 .pagina {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Não deixa o conteúdo da página comer espaço do menu */
 }
 
-.barra-lateral {
-    background-color: #2c3e50;
-    padding: 20px;
-    width: 150px;
-    min-height: 100vh;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Barra de navegação fixa no topo */
+.barra-nav {
+    background-color: #30144c;
+    padding: 0.5rem; /* Deixando o espaçamento entre os itens do menu bem pequeno */
+    width: 100vw; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
+    max-height: 40rem; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
+    position: fixed; /* Deixando a barra fixa*/
+     
 }
 
+/* Container do menu principal */
 .menu {
-    display: inline;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row; /* Deixando os itens do menu em linha */
+    align-items: center; /* Garantia */
+    height: 100%;
+}
+
+/* Lista horizontal de itens de navegação */
+.menu ul {
+    list-style: none; /* Reset na formatação da lista */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem; /* Deixando o espaaçamento entre os itens do menu bem pequeno */
+    margin: 0;
+    height: 1rem;
+    width: 5rem;
     align-items: center;
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: #3498db;
-}
-
+/* Links do menu com cantos arredondados */
 .menu li a {
     display: block;
-    padding: 12px 20px;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem; /* Ajeitando o arredondamento */
     text-decoration: none;
-    color: #ecf0f1;
-    border-radius: 5px;
+    color: #E9E3E6;
+    border-radius: 10rem;
     transition: background 0.3s;
+    white-space: nowrap;
 }
 
+/* Efeito ao passar o mouse para itens do menu */
 .menu li a:hover {
-    background-color: #34495e;
+    background-color: #333333;
     color: #3498db;
 }
 
+/* Estilo base dos links dentro do menu */
 .menu a {
     color: #ecf0f1;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 50rem;
     transition: color 0.3s ease;
 }
 
-.menu a:hover {
-    color: #3498db;
-}
-
-.heroSection {
-    padding: 60px 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+/* Área de destaque principal com gradiente */
+.telaDestaque {
+    padding: 6rem 3rem;
+    background: linear-gradient(360deg, #212020 40%, #451d6d 60%);
+    color: #E9E3E6;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.heroSection h1 {
+/* Título principal da tela de destaque */
+.telaDestaque h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.heroSection p {
+/* Texto descritivo dentro da tela de destaque */
+.telaDestaque p {
     font-size: 1.1rem;
     line-height: 1.8;
     max-width: 600px;
 }
 
-.text-blue-500 {
-    color: #3498db;
+/* Classe utilitária para texto vermelho */
+.textoDestaque {
+    color: #E54B4B;
 }
 
+/* Seção de foto de perfil com alinhamento central */
 .foto-perfil {
     text-align: center;
-    padding: 40px 20px;
+    padding: 4rem 2rem;
 }
 
+/* Estilo da imagem de perfil */
 .foto-perfil img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    border: 4px solid #3498db;
+    border: 4px;
     object-fit: cover;
 }
 
+/* Botão do GitHub */
 .GitButton {
-    display: inline-block;
+    display: none;
     padding: 10px 20px;
     width: 100px;
     height: 100px;
-    background-color: #333;
-    color: #fff;
     text-decoration: none;
     border-radius: 30px;
     transition: background-color 0.3s ease;
 }
 
+/* Botão do LinkedIn */
 .LinkedinButton {
     display: inline-block;
     padding: 10px 20px;
@@ -132,13 +153,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.pagina ul {
+/* Container dos botões sociais */
+.social-buttons {
     display: flex;
     gap: 20px;
     list-style: none;
     justify-content: center;
+    padding: 20px;
 }
 
+/* Estilo do ícone do GitHub */
 .GitIcon {
     width: 100%;
     height: 100%;
@@ -147,6 +171,7 @@ body {
     object-fit: cover;
 }
 
+/* Estilo do ícone do LinkedIn */
 .LinkedinIcon {
     width: 100%;
     height: 100%;
@@ -155,10 +180,12 @@ body {
     object-fit: cover;
 }
 
+/* Elementos que aparecem com animação de entrada */
 .scroll-in {
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* Animação de translação suave para os elementos scroll-in */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -171,12 +198,122 @@ body {
     }
 }
 
+/* Estilo do slider de conhecimento */
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Lista de cards de conhecimento dentro do slider */
+.lista-conhecimentos {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+    height: 400px;
+    list-style: none;
+}
+
+/* Card individual de conhecimento */
+.conhecimento {
+    min-width: 300px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* Card selecionado do slider com destaque */
+.conhecimento.selecionado {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Título dentro do card de conhecimento */
+.conhecimento h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Imagem de conhecimento dentro do card */
+.imagem-conhecimento {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+}
+
+/* Botão de seta do slider */
+.btn-seta {
+    width: 50px;
+    height: 50px;
+    background: #3498db;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Hover do botão de seta */
+.btn-seta:hover {
+    background: #2980b9;
+}
+
+/* Seções principais do site */
+.section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título das seções */
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #E9E3E6;
+}
+
+/* Conteúdo principal do herói */
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+/* Ajuste da tela de destaque para layout flexível */
+.telaDestaque {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Estilos responsivos para telas menores */
 @media (max-width: 768px) {
-    .heroSection h1 {
+    .telaDestaque {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .telaDestaque h1 {
         font-size: 2rem;
     }
-
-    .heroSection {
-        padding: 40px 20px;
+    
+    .slider {
+        flex-direction: column;
+    }
+    
+    .lista-conhecimentos {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .conhecimento {
+        min-width: 250px;
+        height: 350px;
     }
 }
