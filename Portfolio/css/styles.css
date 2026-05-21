@@ -34,10 +34,20 @@ body {
     flex-direction: column; /* Não deixa o conteúdo da página comer espaço do menu */
 }
 
+/* Seções principais do site */
+.section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Barra de navegação fixa no topo */
 .barra-nav {
-    background-color: #30144c;
+    background-color: #451d6d;
     padding: 0.5rem; /* Deixando o espaçamento entre os itens do menu bem pequeno */
+    border: 1px solid #200d33; /* Adicionando uma borda para dar um efeito de profundidade */
+    border-bottom: none; /* Removendo a borda inferior para dar um efeito de continuidade com o conteúdo */
+    box-shadow: 0 2px 4px #0000001a; /* Adicionando uma sombra sutil para dar um efeito de elevação */
     width: 100vw; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
     max-height: 40rem; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
     position: fixed; /* Deixando a barra fixa*/
@@ -95,7 +105,6 @@ body {
     padding-right: 20px;
     width: 100%;
     height: 2em;
-    border: 1px solid #e20ce2;
     background: linear-gradient(360deg, #212020 40%, #451d6d 60%);
     color: #E9E3E6;
     display: flex;
@@ -133,38 +142,33 @@ body {
 
 /* Estilo da imagem de perfil */
 .foto-perfil img {
-    width: 200px;
-    height: 200px;
+    width: 15rem;
+    height: 15rem;
     border: 4px;
     object-fit: cover;
 }
 
 /* Container dos botões sociais */
 .Social-Media {
+    width: 50%;
+    height: 5.5em;
+    box-shadow: 2px 4px 10px 10px #662ba140; /* sombra mais suave e natural */
+    border-radius: 35px;
     display: flex;
     gap: 10px;
     list-style: none;
+    align-items: center;
     justify-content: center;
     padding: 10px;
-}
-
-/* Botão do GitHub */
-.GitButton {
-    display: none;
-    padding: 10px 20px;
-    width: 100px;
-    height: 100px;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
+    margin: 0 auto;
 }
 
 /* Botão do LinkedIn */
 .LinkedinButton {
     display: flex;
     padding: 5px 10px;
-    width: 6em;
-    height: 6em;
+    width: 5em;
+    height: 5em;
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -174,11 +178,81 @@ body {
 .GitButton {
     display: flex;
     padding: 5px 10px;
-    width: 6em;
-    height: 6em;
+    width: 5em;
+    height: 5em;
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+}
+
+/* 1. O Cenário 3D */
+.cena-3d {
+    perspective: 1500px; /* Cria a profundidade do ambiente */
+    width: 50%;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. O Container da Espiral */
+.espiral {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    transform-style: preserve-3d; /* Obriga os filhos a respeitarem o ambiente 3D */
+    animation: girarEspiral 40s linear infinite; /* Animação para rotacionar a espiral */
+}
+
+/* 3. Estilo Geral dos Cartões */
+.cartao {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #21ffc0, #0055ff);
+    border-radius: 15px;
+    border: 1px solid #eae7ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backface-visibility: visible; /* Mostra o verso do cartão com o texto espelhado quando virar de costas */
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+}
+
+/* Efeito de destaque ao passar o mouse */
+.cartao:hover {
+    filter: brightness(1.05); /* Deixa o cartão um pouco mais brilhante */
+    transform: scale(1.00) !important; /* Mantém a posição mas cresce um pouco */
+}
+
+/* 4. Distribuição dos Cartões na Espiral (Matemática do CSS) */
+/* Cada cartão rotaciona 45 graus a mais e desce 40px (translateY) */
+/* O translateZ(400px) empurra todos para longe do centro, criando o raio do círculo */
+
+.cartao:nth-child(1) { transform: rotateY(0deg)   translateY(-120px) translateZ(190px); }
+.cartao:nth-child(2) { transform: rotateY(45deg)  translateY(-80px)  translateZ(190px); }
+.cartao:nth-child(3) { transform: rotateY(90deg)  translateY(-40px)  translateZ(190px); }
+.cartao:nth-child(4) { transform: rotateY(135deg) translateY(0px)    translateZ(190px); }
+.cartao:nth-child(5) { transform: rotateY(180deg) translateY(40px)   translateZ(190px); }
+.cartao:nth-child(6) { transform: rotateY(225deg) translateY(80px)   translateZ(190px); }
+.cartao:nth-child(7) { transform: rotateY(270deg) translateY(120px)  translateZ(190px); }
+.cartao:nth-child(8) { transform: rotateY(315deg) translateY(160px)  translateZ(190px); }
+
+/* 5. Animação de Rotação Infinita */
+@keyframes girarEspiral {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* Título das seções */
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #E9E3E6;
 }
 
 /* Elementos que aparecem com animação de entrada */
@@ -197,95 +271,4 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Estilo do slider de conhecimento */
-.slider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* Lista de cards de conhecimento dentro do slider */
-.lista-conhecimentos {
-    display: flex;
-    overflow: hidden;
-    width: 300px;
-    height: 400px;
-    list-style: none;
-}
-
-/* Card individual de conhecimento */
-.conhecimento {
-    min-width: 300px;
-    height: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    opacity: 0.5;
-    flex-shrink: 0;
-}
-
-/* Card selecionado do slider com destaque */
-.conhecimento.selecionado {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-/* Título dentro do card de conhecimento */
-.conhecimento h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-/* Imagem de conhecimento dentro do card */
-.imagem-conhecimento {
-    width: 80px;
-    height: 80px;
-    margin: 10px auto;
-}
-
-/* Botão de seta do slider */
-.btn-seta {
-    width: 50px;
-    height: 50px;
-    background: #3498db;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-/* Hover do botão de seta */
-.btn-seta:hover {
-    background: #2980b9;
-}
-
-/* Seções principais do site */
-.section {
-    padding: 60px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Título das seções */
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #E9E3E6;
-}
-
-/* Ajuste da tela de destaque para layout flexível */
-.telaDestaque {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    flex: 1;
-    padding-right: 40px;
-    border: 1px solid #e20ce2;
 }
