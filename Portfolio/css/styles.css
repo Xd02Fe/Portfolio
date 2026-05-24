@@ -21,6 +21,21 @@ body {
     --em: 1px;
 }
 
+/* Parágrafos do site*/
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 50rem;
+    color: #F8F0FB;
+}
+
+/* Título das seções */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #E9E3E6;
+}
+
 /* Main da página */
 .main {
     display: flex;
@@ -36,8 +51,8 @@ body {
 
 /* Seções principais do site */
 .section {
-    padding: 60px 40px;
-    max-width: 1200px;
+    padding: 6rem 4rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -45,11 +60,11 @@ body {
 .barra-nav {
     background-color: #451d6d;
     padding: 0.5rem; /* Deixando o espaçamento entre os itens do menu bem pequeno */
-    border: 1px solid #200d33; /* Adicionando uma borda para dar um efeito de profundidade */
+    border: 0.1rem solid #200d33; /* Adicionando uma borda para dar um efeito de profundidade */
     border-bottom: none; /* Removendo a borda inferior para dar um efeito de continuidade com o conteúdo */
-    box-shadow: 0 2px 4px #0000001a; /* Adicionando uma sombra sutil para dar um efeito de elevação */
+    box-shadow: 0 0.2rem 0.4rem #0000001a; /* Adicionando uma sombra sutil para dar um efeito de elevação */
     width: 100vw; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
-    max-height: 40rem; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
+    max-height: 4rem; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
     position: fixed; /* Deixando a barra fixa*/
      
 }
@@ -80,15 +95,14 @@ body {
     padding: 0.2rem 0.2rem 0.2rem 0.2rem; /* Ajeitando o arredondamento */
     text-decoration: none;
     color: #E9E3E6;
-    border-radius: 10rem;
+    border-radius: 1rem;
     transition: background 0.3s;
     white-space: nowrap;
 }
 
 /* Efeito ao passar o mouse para itens do menu */
 .menu li a:hover {
-    background-color: #333333;
-    color: #3498db;
+    color: #6C6CC2;
 }
 
 /* Estilo base dos links dentro do menu */
@@ -102,15 +116,16 @@ body {
 /* Área de destaque principal com gradiente */
 .telaDestaque {
     padding: 1rem 0.5rem;
-    padding-right: 20px;
+    padding-right: 2rem;
     width: 100%;
     height: 2em;
     background: linear-gradient(360deg, #212020 40%, #451d6d 60%);
     color: #E9E3E6;
     display: flex;
+    flex-direction: row; /* Mantém os conteúdos lado a lado*/
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 4rem;
     flex-wrap: wrap;
     flex: 1;
 
@@ -119,14 +134,7 @@ body {
 /* Título principal da tela de destaque */
 .telaDestaque h1 {
     font-size: 3em;
-    margin-bottom: 20px;
-}
-
-/* Texto descritivo dentro da tela de destaque */
-.telaDestaque p {
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 500px;
+    margin-bottom: 2rem;
 }
 
 /* Classe utilitária para texto vermelho */
@@ -140,119 +148,152 @@ body {
     padding: 4rem 2rem;
 }
 
-/* Estilo da imagem de perfil */
+/* Imagem de perfil */
 .foto-perfil img {
     width: 15rem;
     height: 15rem;
-    border: 4px;
+    border: 0.4rem solid #451d6d;
+    border-radius: 50%;
     object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
 }
 
 /* Container dos botões sociais */
 .Social-Media {
-    width: 50%;
+    width: 20%;
     height: 5.5em;
-    box-shadow: 2px 4px 10px 10px #662ba140; /* sombra mais suave e natural */
-    border-radius: 35px;
+    box-shadow: 0.2rem 0.4rem 1rem 1rem #662ba140; /* sombra mais suave e natural */
+    border-radius: 3.5rem;
     display: flex;
-    gap: 10px;
+    flex-direction: row; /* Mantém os conteúdos lado a lado*/
+    gap: 1rem;
     list-style: none;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 1rem;
     margin: 0 auto;
 }
 
 /* Botão do LinkedIn */
-.LinkedinButton {
+.Botao_Linkedin {
     display: flex;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     width: 5em;
     height: 5em;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
 /* Botão do GitHub */
-.GitButton {
+.Botao_GitHub {
     display: flex;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     width: 5em;
     height: 5em;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     transition: background-color 0.3s ease;
 }
 
-/* 1. O Cenário 3D */
-.cena-3d {
-    perspective: 1500px; /* Cria a profundidade do ambiente */
-    width: 50%;
-    height: 40rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 2. O Container da Espiral */
-.espiral {
-    position: relative;
-    width: 150px;
-    height: 100px;
-    transform-style: preserve-3d; /* Obriga os filhos a respeitarem o ambiente 3D */
-    animation: girarEspiral 40s linear infinite; /* Animação para rotacionar a espiral */
-}
-
-/* 3. Estilo Geral dos Cartões */
-.cartao {
-    position: absolute;
+/*Section dos conhecimentos que possuo e as caixas dos mesmos*/
+.Conhecimentos {
+    padding: 6rem 4rem;
+    padding-bottom: 0;
+    padding-top: 1rem;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #21ffc0, #0055ff);
-    border-radius: 15px;
-    border: 1px solid #eae7ec;
+        max-width: 120rem;
+        min-width: 30rem;
+    height: 27rem;
+        max-height: 26rem;
+        min-height: 20rem;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* Mantém os conteúdos lado a lado*/
+    align-items: flex-start;
+}
+
+.HTML_BoxModel, .CSS_BoxModel, .Js_BoxModel, .C_BoxModel, .Python_BoxModel {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    padding-top: 0.2rem;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    backface-visibility: visible; /* Mostra o verso do cartão com o texto espelhado quando virar de costas */
-    transition: transform 0.5s ease, filter 0.5s ease;
-    cursor: pointer;
-}
-
-/* Efeito de destaque ao passar o mouse */
-.cartao:hover {
-    filter: brightness(1.05); /* Deixa o cartão um pouco mais brilhante */
-    transform: scale(1.00) !important; /* Mantém a posição mas cresce um pouco */
-}
-
-/* 4. Distribuição dos Cartões na Espiral (Matemática do CSS) */
-/* Cada cartão rotaciona 45 graus a mais e desce 40px (translateY) */
-/* O translateZ(400px) empurra todos para longe do centro, criando o raio do círculo */
-
-.cartao:nth-child(1) { transform: rotateY(0deg)   translateY(-120px) translateZ(190px); }
-.cartao:nth-child(2) { transform: rotateY(45deg)  translateY(-80px)  translateZ(190px); }
-.cartao:nth-child(3) { transform: rotateY(90deg)  translateY(-40px)  translateZ(190px); }
-.cartao:nth-child(4) { transform: rotateY(135deg) translateY(0px)    translateZ(190px); }
-.cartao:nth-child(5) { transform: rotateY(180deg) translateY(40px)   translateZ(190px); }
-.cartao:nth-child(6) { transform: rotateY(225deg) translateY(80px)   translateZ(190px); }
-.cartao:nth-child(7) { transform: rotateY(270deg) translateY(120px)  translateZ(190px); }
-.cartao:nth-child(8) { transform: rotateY(315deg) translateY(160px)  translateZ(190px); }
-
-/* 5. Animação de Rotação Infinita */
-@keyframes girarEspiral {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
-}
-
-/* Título das seções */
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    justify-content: flex-start;
     color: #E9E3E6;
+}
+.HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel imrem;
+    height: 10rem;
+    object-fit: cover;
+    display: flex;
+    border-radius: 1.5rem;
+}
+.HTML_BoxModel h2, .CSS_BoxModel h2, .Js_BoxModel h2, .C_BoxModel h2, .Python_BoxModel h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.Carreira {
+    padding: 2rem 1rem;
+    width: 100%;
+        max-width: 120rem;
+        min-width: 30rem;
+    height: 35rem;
+        max-height: 36rem;
+        min-height: 25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Mantém os conteúdos lado a lado*/
+}
+
+.Carreira01_BoxModel {
+    padding: 3rem 2rem;
+    width: 35rem;
+        max-width: 90rem;
+        min-width: 15rem;
+    height: 15rem;
+        max-height: 16rem;
+        min-height: 10rem;
+    margin: 0;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: start;
+}
+
+.Box_Imagem_Carreira01 {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Box_Imagem_Carreira01 img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.Box_Texto_Carreira01 {
+    width: 30rem;
+    height: 15rem;
+    margin-left: 0.2rem;
+    border-right: 0.2rem solid #451d6d;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
 }
 
 /* Elementos que aparecem com animação de entrada */
@@ -264,7 +305,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
     to {
