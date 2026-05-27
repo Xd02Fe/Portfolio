@@ -139,7 +139,7 @@ h2 {
 
 /* Classe utilitária para texto vermelho */
 .textoDestaque {
-    color: #E54B4B;
+    color: #fcfcfc;
 }
 
 /* Seção de foto de perfil com alinhamento central */
@@ -175,26 +175,36 @@ h2 {
     margin: 0 auto;
 }
 
-/* Botão do LinkedIn */
-.Botao_Linkedin {
-    display: flex;
-    padding: 0.5rem 1rem;
-    width: 5em;
-    height: 5em;
-    text-decoration: none;
-    border-radius: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-/* Botão do GitHub */
+/* Botão do LinkedIn e GitHub */
+.Botao_Linkedin,
 .Botao_GitHub {
     display: flex;
-    padding: 0.5rem 1rem;
-    width: 5em;
-    height: 5em;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0.1rem;
+    padding-right: 0.01px;
+    padding-left: 1px;
+    width: auto;
+    height: auto;
+    margin: 1px;
     text-decoration: none;
     border-radius: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #451d6d;
+    background-color: transparent;
+    
+}
+
+.Botao_Linkedin img, .Botao_GitHub img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.5rem;
+} 
+
+/* Efeito ao passar o mouse para itens */
+.Botao_Linkedin:hover, .Botao_GitHub:hover {
+    background-color: #451D6D;
+    transform: scale(1.2);
 }
 
 /*Section dos conhecimentos que possuo e as caixas dos mesmos*/
@@ -227,8 +237,9 @@ h2 {
     justify-content: flex-start;
     color: #E9E3E6;
 }
-.HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel imrem;
-    height: 10rem;
+.HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img {
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
     display: flex;
     border-radius: 1.5rem;
@@ -238,7 +249,6 @@ h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
 }
-
 
 .Carreira {
     padding: 2rem 1rem;
@@ -301,7 +311,7 @@ h2 {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* Animação de translação suave para os elementos scroll-in */
+/* Animação de surgimento suave para os elementos scroll-in */
 @keyframes fadeInUp {
     from {
         opacity: 0;
