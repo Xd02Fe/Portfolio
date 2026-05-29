@@ -1,25 +1,75 @@
 /* Estilos responsivos para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
+    body{
+        --rem: 1px
+    }
+
     .telaDestaque {
-        flex-direction: column;
-        text-align: center;
+
+        width: 85%;
     }
     
     .telaDestaque h1 {
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+
+    .foto-perfil img {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: space-around;
     }
     
-    .slider {
+    .barra-nav {
         flex-direction: column;
     }
     
-    .lista-conhecimentos {
+    .Social-Media {
         width: 250px;
         height: 350px;
     }
     
-    .conhecimento {
+    .Conhecimentos {
+        width: 10%;
         min-width: 250px;
-        height: 350px;
     }
+}
+
+@media (max-width: 375px) {
+    body{
+        --rem: 1px
+    }
+
+    .telaDestaque {
+
+        width: 100%;
+    }
+    
+    .telaDestaque h1 {
+        font-size: 1rem;
+    }
+
+    .foto-perfil img {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .barra-nav {
+        flex-direction: column;
+    }
+    
+    .Social-Media {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Conhecimentos {
+        width: 10%;
+        min-width: 250px;
+    }
+
 }
