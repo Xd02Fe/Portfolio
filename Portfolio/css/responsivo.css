@@ -1,5 +1,5 @@
 /* Estilos responsivos para telas menores */
-@media (max-width: 1024px) {
+@media (max-width: 1044px) {
     .pagina{
         width: 100%;
     }
@@ -8,8 +8,18 @@
         width: 100%;
         justify-content: space-around;
     }
+
+    .Texto-Destaque {
+        width: 55%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
     
     .telaDestaque h1 {
+        font-size: 32px;
+    }
+
+    p {
         font-size: 16px;
     }
 
@@ -22,16 +32,23 @@
     
     .barra-nav {
         flex-direction: column;
+        width: 99%;
     }
     
     .Social-Media {
         width: 250px;
-        height: 350px;
+        height: 100px;
     }
     
     .Conhecimentos {
-        width: 10%;
+        width: 50%;
         min-width: 250px;
+    }
+
+    .Conhecimentos .HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img{
+        width: 140px;
+        height: 140px;
+        min-width: 80px;
     }
 }
 

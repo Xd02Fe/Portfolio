@@ -67,7 +67,7 @@ h2 {
     border: 1.6px solid #200d33; /* Adicionando uma borda para dar um efeito de profundidade */
     border-bottom: none; /* Removendo a borda inferior para dar um efeito de continuidade com o conteúdo */
     box-shadow: 0 3.2px 6.4px #0000001a; /* Adicionando uma sombra sutil para dar um efeito de elevação */
-    width: 100%; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
+    width: auto; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
     max-height: 64px; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
     position: fixed; /* Deixando a barra fixa*/
 }
