@@ -189,8 +189,8 @@ h2 {
     padding: 1.6px;
     padding-right: 0.01px;
     padding-left: 1px;
-    width: 64px; 
-    height: 64px; 
+    width: 62px; 
+    height: 62px; 
     margin: 1px;
     text-decoration: none;
     border-radius: 50%; 
@@ -205,12 +205,6 @@ h2 {
     margin: 0; 
     display: block;
 } 
-
-/* Efeito ao passar o mouse para itens */
-.Botao_Linkedin:hover, .Botao_GitHub:hover {
-    background-color: #451D6D;
-    transform: scale(1.2);
-}
 
 /*Section dos conhecimentos que possuo e as caixas dos mesmos*/
 .Conhecimentos {
@@ -322,6 +316,19 @@ h2 {
 /* Elementos que aparecem com animação de entrada */
 .scroll-in {
     animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efeito ao passar o mouse para itens */
+.Botao_Linkedin:hover, .Botao_GitHub:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
+/* Filtro aplicado diretamente na imagem interna ao passar o mouse no link */
+.Botao_Linkedin:hover img, .Botao_GitHub:hover img, .HTML_BoxModel:hover img, 
+.CSS_BoxModel:hover img, .Js_BoxModel:hover img, .C_BoxModel:hover img, .Python_BoxModel:hover img {
+    /* Este filtro transforma uma imagem escura/branca em um tom de roxo (#451D6D), sendo feito junto do CSS Filter Generator */
+    filter: brightness(0) saturate(100%) invert(12%) sepia(36%) saturate(4775%) hue-rotate(258deg) brightness(200%) contrast(96%);
 }
 
 /* Animação de surgimento suave para os elementos scroll-in */
