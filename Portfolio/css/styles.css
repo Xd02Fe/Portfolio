@@ -67,7 +67,7 @@ h2 {
     border: 1.6px solid #200d33; /* Adicionando uma borda para dar um efeito de profundidade */
     border-bottom: none; /* Removendo a borda inferior para dar um efeito de continuidade com o conteúdo */
     box-shadow: 0 3.2px 6.4px #0000001a; /* Adicionando uma sombra sutil para dar um efeito de elevação */
-    width: auto; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
+    width: 100%; /* Fazendo a barra de navegação ocupar toda a parte de cima da tela */
     max-height: 64px; /* Limitando a altura da barra de navegação para evitar que ela fique muito alta */
     position: fixed; /* Deixando a barra fixa*/
 }
@@ -118,20 +118,21 @@ h2 {
 
 /* Área de destaque principal com gradiente */
 .telaDestaque {
-    padding: 16px 8px;
+    padding: 40px 16px;
     padding-right: 8px;
     margin: 1px;
     max-width: 100%;
     width: 100%;
-    height: 32px;
+    height: auto;
+    min-height: 400px;
     background: linear-gradient(360deg, #212020 40%, #451d6d 60%);
     color: #E9E3E6;
     display: flex;
     flex-direction: row; /* Mantém os conteúdos lado a lado */
     align-items: center;
     justify-content: space-around;
-    gap: 3.2px;
-    flex-wrap: wrap;
+    gap: 16px;
+    flex-wrap: nowrap;
     flex: 1;
 }
 
@@ -188,11 +189,11 @@ h2 {
     padding: 1.6px;
     padding-right: 0.01px;
     padding-left: 1px;
-    width: auto;
-    height: auto;
+    width: 64px; 
+    height: 64px; 
     margin: 1px;
     text-decoration: none;
-    border-radius: 16px;
+    border-radius: 50%; 
     transition: background-color 0.3s ease, color 0.3s ease;
     color: #451d6d;
     background-color: transparent;
@@ -201,7 +202,8 @@ h2 {
 .Botao_Linkedin img, .Botao_GitHub img {
     width: 64px;
     height: 64px;
-    margin-right: 8px;
+    margin: 0; 
+    display: block;
 } 
 
 /* Efeito ao passar o mouse para itens */
@@ -212,11 +214,11 @@ h2 {
 
 /*Section dos conhecimentos que possuo e as caixas dos mesmos*/
 .Conhecimentos {
-    padding: 96px 64px;
+    padding: 66px 32px;
     padding-bottom: 0;
     padding-top: 16px;
     width: 100%;
-    max-width: 1920px;
+    max-width: 1600px;
     min-width: 480px;
     height: 432px;
     max-height: 416px;
@@ -248,13 +250,20 @@ h2 {
     display: flex;
     border-radius: 24px;
 }
+.HTML_BoxModel a, .CSS_BoxModel a, .Js_BoxModel a, .C_BoxModel a, .Python_BoxModel a {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    display: flex;
+    border-radius: 24px;
+}
 .HTML_BoxModel h2, .CSS_BoxModel h2, .Js_BoxModel h2, .C_BoxModel h2, .Python_BoxModel h2 {
     margin-top: 32px;
     font-size: 32px;
     margin-bottom: 32px;
 }
 
-#Carreira {
+#carreira {
     padding: 32px 16px;
     width: 100%;
     max-width: 1920px;

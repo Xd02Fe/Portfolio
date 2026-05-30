@@ -1,38 +1,89 @@
 /* Estilos responsivos para telas menores */
-@media (max-width: 1044px) {
-    .pagina{
+@media (max-width: 1069px) {
+    *, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Garante os cálculos corretos de padding */
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden; /* Evita rolagem lateral na tela do celular */
+    }
+
+    .pagina {
         width: 100%;
     }
 
     .telaDestaque {
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-direction: row; 
+        padding: 80px 24px 40px 24px; /* Espaço para não sumir debaixo da nav fixa */
     }
 
     .Texto-Destaque {
-        width: 55%;
-        padding-left: 0px;
-        padding-right: 0px;
+        width: 60%; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .telaDestaque h1 {
         font-size: 32px;
+        width: 100%; 
+        margin-bottom: 16px;
     }
 
     p {
         font-size: 16px;
     }
 
-    .foto-perfil img {
-        width: 150px;
-        height: 150px;
+    .foto-perfil {
+        padding: 0; 
+        width: 35%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+    }
+
+    .foto-perfil img {
+        width: 140px; 
+        height: 140px;
     }
     
     .barra-nav {
-        flex-direction: column;
-        width: 99%;
+        width: 100%; 
+        max-height: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 0;
+        height: auto;
+        width: auto; 
+        align-items: center;
+    }
+
+    .menu li a {
+        display: flex;
+        text-decoration: none;
+        color: #E9E3E6;
+        border-radius: 16px;
+        white-space: nowrap;
+        width: 100%;
+        height: 100%;
     }
     
     .Social-Media {
@@ -41,46 +92,180 @@
     }
     
     .Conhecimentos {
-        width: 50%;
-        min-width: 250px;
-    }
-
-    .Conhecimentos .HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img{
-        width: 140px;
-        height: 140px;
+        width: 100px;
+        height: 100px;
         min-width: 80px;
+        max-width: 1600px;
+        min-width: 80px;
+        max-height: 416px;
+        min-height: 320px;
+        padding: 66px 32px;
+        padding-bottom: 0;
+        padding-top: 16px;
+        margin: 0;
+        display: flex;
+        flex-direction: row; /* Mantém os conteúdos lado a lado*/
+        align-items: center;
+        flex-wrap: nowrap;
     }
-}
 
-@media (max-width: 497px) {
-    .telaDestaque {
-        width: 100%;
+        .HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img {
+        width: 100px;
+        height: 100px;
+        padding-right: 0px;
+        padding-left: 0px;
+        display: flex;
+        flex-direction: row;
     }
-    
-    .telaDestaque h1 {
-        font-size: 16px;
-        justify-content: space-around;
-    }
-
-    .foto-perfil img {
-        width: 150px;
-        height: 150px;
+    .HTML_BoxModel a, .CSS_BoxModel a, .Js_BoxModel a, .C_BoxModel a, .Python_BoxModel a {
+        width: 100px;
+        height: 100px;
+        padding-right: 0px;
+        padding-left: 0px;
         display: flex;
     }
-    
-    .barra-nav {
-        flex-direction: column;
+    .HTML_BoxModel h2, .CSS_BoxModel h2, .Js_BoxModel h2, .C_BoxModel h2, .Python_BoxModel h2 {
+        margin-top: 32px;
+        font-size: 20px;
+        margin-bottom: 32px;
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
     }
-    
-    .Social-Media {
+
+        #Carreira {
+        padding: 32px 16px;
+        width: 100px;
+        max-width: 1920px;
+        min-width: 480px;
+        height: 240px;
+        max-height: 576px;
+        min-height: 160px;
+        margin: 0;
+        display: flex;
+        flex-direction: row; /* Mantém os conteúdos lado a lado*/
+    }
+
+    .Carreira01_BoxModel {
+        padding: 48px 32px;
+        width: 560px;
+        max-width: 50%;
+        min-width: 240px;
+        height: 250px;
+        max-height: 280px;
+        min-height: 200px;
+        margin: 0;
+        display: flex;
+        align-self: flex-start;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .Box_Imagem_Carreira01 {
         width: 160px;
         height: 160px;
+        border-radius: 32px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Box_Imagem_Carreira01 img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .Box_Texto_Carreira01 {
+        width: 300px;
+        height: 240px;
+        margin-left: 3.2px;
+        border-right: 3.2px solid #451d6d;
+        padding-right: 0px;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
     }
-    
+
+    .Box_Texto_Carreira01 h2 {
+        font-size: 15px;
+        width: 290px;
+    }
+
+    .Box_Texto_Carreira01 p {
+        font-size: 10px;
+        width: 290px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .telaDestaque {
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo no celular */
+        text-align: center;
+        gap: 24px;
+    }
+    .Texto-Destaque {
+        width: 100%;
+        align-items: center;
+    }
+    .foto-perfil {
+        width: 100%;
+    }
+
+   /* Transformando o container em Grid */
     .Conhecimentos {
-        width: 10%;
-        min-width: 250px;
+        display: grid;
+        /* Cria colunas dinâmicas: cada uma tem no mínimo 120px e no máximo o espaço disponível */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        gap: 20px; /* Espaçamento perfeito entre as caixas (tanto vertical quanto horizontal) */
+        
+        /* Resetando os travamentos antigos que quebravam o layout */
+        width: 100%;
+        max-width: 100%;
+        min-width: 0; 
+        height: auto;
+        max-height: none;
+        min-height: 0;
+        padding: 40px 16px;
+        margin: 0 auto;
+    }
+
+    /* Ajustando cada caixa de tecnologia para se moldar ao Grid */
+    .HTML_BoxModel, .CSS_BoxModel, .Js_BoxModel, .C_BoxModel, .Python_BoxModel {
+        width: 100%; /* Ocupa a largura total da coluna do Grid */
+        height: auto; /* Deixa a altura livre para se adaptar ao conteúdo */
+        padding: 16px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #2a2929; /* Opcional: um fundo sutil para destacar os blocos */
+        border-radius: 16px;
+    }
+
+    /* Redimensionando os links e imagens para não estourarem no celular */
+    .HTML_BoxModel a, .CSS_BoxModel a, .Js_BoxModel a, .C_BoxModel a, .Python_BoxModel a,
+    .HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img {
+        width: 70px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Ajustando os títulos das tecnologias */
+    .HTML_BoxModel h2, .CSS_BoxModel h2, .Js_BoxModel h2, .C_BoxModel h2, .Python_BoxModel h2 {
+        margin-top: 12px;
+        margin-bottom: 0;
+        font-size: 16px;
+        text-align: center;
     }
 }
