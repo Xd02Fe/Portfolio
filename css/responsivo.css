@@ -206,66 +206,237 @@
 
 }
 
-@media (max-width: 600px) {
-    .telaDestaque {
-        flex-direction: column-reverse; /* Foto em cima, texto embaixo no celular */
-        text-align: center;
-        gap: 24px;
-    }
-    .Texto-Destaque {
-        width: 100%;
-        align-items: center;
-    }
-    .foto-perfil {
-        width: 100%;
+@media (max-width: 700px) {
+    *, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
     }
 
-   /* Transformando o container em Grid */
+    body {
+        width: 100%;
+        overflow-x: hidden; /* Garantia de segurança contra vazamentos */
+    }
+
+    .pagina {
+        width: 100%;
+        max-width: 100%; /* 100% para se moldar perfeitamente */
+        min-width: 0;
+    }
+
+    .telaDestaque {
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 14px;
+        padding: 90px 16px 40px 16px; /* Ajustado os paddings para evitar que o conteúdo suma */
+        width: 100%; /* 100% para não sobrar espaço nas bordas */
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .Texto-Destaque {
+        width: 100%; /* Ocupa a largura total disponível no centro */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os textos no celular */
+        text-align: center;
+    }
+
+    .telaDestaque h1 {
+        font-size: 32px;
+        width: 100%; 
+        margin-bottom: 16px;
+    }
+
+    .foto-perfil {
+        width: 100%;
+        padding: 0; /* Remove preenchimentos pesados herdados do desktop */
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Ajuste da Barra de Navegação */
+    .barra-nav {
+        width: 100%;
+        max-width: 100%; /* 100% para cobrir o topo inteiro */
+        max-height: none;
+        z-index: 999; /* Garante que o menu fique sempre visível acima de tudo */
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 24px; /* Espaço confortável para o clique */
+        margin: 0;
+        height: auto;
+        width: auto; 
+        align-items: center;
+    }
+
+    .menu li a {
+        display: flex;
+        text-decoration: none;
+        color: #E9E3E6;
+        border-radius: 16px;
+        white-space: nowrap;
+        font-size: 14px; /* Leve aumento para melhor legibilidade */
+    }
+
+    /* Container dos botões sociais */
+    .Social-Media {
+        width: 100%; /* Mudado de 65% para evitar quebras de margem automática */
+        max-width: 250px;
+        height: auto;
+        gap: 16px;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 0;
+        margin: 24px auto;
+    }
+
+    /* Botão do LinkedIn e GitHub */
+    .Botao_Linkedin,
+    .Botao_GitHub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 62px; 
+        height: 62px; 
+        text-decoration: none;
+        border-radius: 50%; 
+        color: #451d6d;
+        background-color: transparent;
+    }
+
+    .Botao_Linkedin img, .Botao_GitHub img {
+        width: 48px; /* Reduzindo levemente para não estourar a proporção do botão */
+        height: 48px;
+        margin: 0; 
+        display: block;
+    } 
+
+    /* Grid de Conhecimentos */
     .Conhecimentos {
         display: grid;
-        /* Cria colunas dinâmicas: cada uma tem no mínimo 120px e no máximo o espaço disponível */
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-        gap: 20px; /* Espaçamento perfeito entre as caixas (tanto vertical quanto horizontal) */
-        
-        /* Resetando os travamentos antigos que quebravam o layout */
-        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Aumentado o mínimo para alinhar melhor */
+        gap: 12px; 
+        width: 100%; /* tentando evitar margens fantasmas laterais */
         max-width: 100%;
         min-width: 0; 
         height: auto;
         max-height: none;
         min-height: 0;
-        padding: 40px 16px;
-        margin: 0 auto;
+        padding: 32px 16px;
+        margin: 0;
     }
 
-    /* Ajustando cada caixa de tecnologia para se moldar ao Grid */
     .HTML_BoxModel, .CSS_BoxModel, .Js_BoxModel, .C_BoxModel, .Python_BoxModel {
-        width: 100%; /* Ocupa a largura total da coluna do Grid */
-        height: auto; /* Deixa a altura livre para se adaptar ao conteúdo */
+        width: 100%; 
+        height: auto; 
         padding: 16px;
         margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #2a2929; /* Opcional: um fundo sutil para destacar os blocos */
+        background-color: #2a2929; 
         border-radius: 16px;
     }
 
-    /* Redimensionando os links e imagens para não estourarem no celular */
     .HTML_BoxModel a, .CSS_BoxModel a, .Js_BoxModel a, .C_BoxModel a, .Python_BoxModel a,
     .HTML_BoxModel img, .CSS_BoxModel img, .Js_BoxModel img, .C_BoxModel img, .Python_BoxModel img {
-        width: 70px;
-        height: 70px;
-        padding: 0;
-        margin: 0;
+        width: 50px;
+        height: 50px;
     }
 
-    /* Ajustando os títulos das tecnologias */
     .HTML_BoxModel h2, .CSS_BoxModel h2, .Js_BoxModel h2, .C_BoxModel h2, .Python_BoxModel h2 {
         margin-top: 12px;
         margin-bottom: 0;
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    /* Ajuste Crítico: Seção de Carreira */
+    #carreira {
+        padding: 32px 16px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto; /* Mudado de 240px fixos para auto, deixando o conteúdo respirar */
+        max-height: none;
+        min-height: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* Alterado para COLUMN! No celular, foto fica em cima e texto embaixo */
+        align-items: center;
+    }
+
+    .Carreira01_BoxModel {
+        padding: 24px 16px;
+        width: 100%; /* Ocupa o espaço total da tela do celular */
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        max-height: none;
+        min-height: 0;
+        display: flex;
+        flex-direction: column; /* Alinha os blocos internos verticalmente */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .Box_Imagem_Carreira01 {
+        width: 80px;
+        height: 80px;
+        border-radius: 16px;
+        padding: 0;
+        margin-bottom: 16px; /* Espaço antes de entrar o texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Box_Imagem_Carreira01 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ajusta a logo sem cortar as bordas */
+    }
+
+    .Box_Texto_Carreira01 {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        border-right: 0px; /* Remove a borda lateral que não faz sentido no fluxo vertical */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os textos */
+        justify-content: center;
+    }
+
+    .Box_Texto_Carreira01 h2 {
+        font-size: 18px; /* Aumentado para dar destaque de título */
+        width: 100%;
+        margin-bottom: 8px;
+        color: #E9E3E6;
+    }
+
+    .Box_Texto_Carreira01 p {
+        font-size: 14px; /* Aumentado para ficar legível no celular */
+        width: 100%;
         text-align: center;
     }
 }
